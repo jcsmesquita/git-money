@@ -31,7 +31,7 @@ def cli(issue, description, init):
         return print('Please set your GitHub access token before continuing')
     
     if (init):
-        os.system(BITGO_PATH + '/bin/bitgo-express --debug --port 3080 --env prod --bind localhost &')
+        os.system(BITGO_PATH + '/bin/bitgo-express --debug --port 3080 --env prod --bind 0.0.0.0 &')
         server.run()
         return time.sleep(10)
     return github.create_issue(issue, description)
